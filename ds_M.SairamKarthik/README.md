@@ -1,17 +1,67 @@
-# Web3 Trading Insights
+# 🚀 Trader Classification using XGBoost
 
-## 📊 Overview
-This project explores how trading performance (PnL, volume, size) relates to overall market sentiment (Fear vs Greed) using historical trader data and the Bitcoin Fear & Greed Index.
+This project builds a machine learning pipeline to classify traders as either **High Risk** or **Low Risk** based on their trading behaviors using an XGBoost classifier.
 
 ## 📁 Project Structure
-- `notebook_1.ipynb`: Main analysis and visualizations (Google Colab)
-- `csv_files/`: Processed intermediate datasets
-- `outputs/`: Visualizations (charts, graphs)
+```bash
+ds_M.SairamKarthik/
+├── csv_files/
+├── outputs/
+├── notebook_1.ipynb
+├── notebook_2.ipynb
+├── requirements.txt
+└── README.md
+```
 
-## 🔗 Google Colab
-[View the Colab Notebook](https://colab.research.google.com/drive/1EUlzZeYcw04uEyellwQzOw8JngcvvtC7?usp=sharing)
+---
 
-## 📌 Next Steps
-- Deeper visual analytics
-- Pattern discovery in trader behavior
-- Final report with summarized insights
+## 📌 Objective
+
+To build an end-to-end machine learning model using **XGBoost** that:
+- Cleans and processes the input trade data
+- Extracts meaningful features from raw timestamps
+- Trains a robust binary classifier
+- Outputs predictions for the provided test data
+
+---
+
+## 📊 Features Used
+
+- **price**, **volume**, **pnl**, **trade_count**
+- **Time-based features**: hour, minute, second, etc.
+- **Aggregated statistics**: mean, standard deviation, etc.
+
+---
+
+## ⚙️ ML Pipeline Overview
+
+1. **Data Preprocessing**
+   - Loaded raw CSV files from `/csv_files`
+   - Extracted time-based features
+   - Filtered and aggregated necessary stats
+
+2. **Model Training**
+   - Trained XGBoost classifier
+   - Evaluated using classification report, confusion matrix
+
+3. **Prediction**
+   - Inference on test set
+   - Saved outputs to `/outputs/predictions.csv`
+
+---
+
+## 📈 Results Summary
+
+- XGBoost achieved strong performance on training data.
+- Data analysis showed **very low or negative correlation** between raw features, making engineered features essential.
+
+---
+
+## 🧪 Requirements
+
+Install dependencies using:
+
+```bash
+pip install -r requirements.txt
+```
+
